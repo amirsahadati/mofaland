@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>موفا لند | Mofa Land</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- هدر سایت -->
+  <header style="background-color: #111; color: white; padding: 20px;">
+    <h1>موفا لند</h1>
+    <p>برند محصولات خاص و لوکس</p>
+  </header>
+
+  <!-- منوی ساده -->
+<nav id="navbar" class="navbar">
+  <div class="container">
+    <div class="logo">موفا لند</div>
+    <ul class="nav-links">
+      <li><a href="#home">خانه</a></li>
+      <li><a href="#products">محصولات</a></li>
+      <li><a href="#advantages">مزایا</a></li>
+      <li><a href="#testimonials">نظرات</a></li>
+      <li><a href="#faq">سوالات</a></li>
+      <li><a href="#contact">تماس</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- دکمه برگشت به بالا -->
+<button id="backToTop" title="بازگشت به بالا">⬆️</button>
+
+
+
+  <!-- درباره ما -->
+<section id="products">
+  <h2>محصولات ما</h2>
+
+  <div class="product-container">
+
+    <div class="product-card">
+      <img src="image/c_1LuTERWe0vY_il.jpg" alt="محصول 1">
+      <h3>محصول شماره ۱</h3>
+      <p>دنبال دستگاه بخور متفاوت هستی؟ دستگاه بخور کشتی تایتانیک دیجی کیوب، با طراحی منحصربه‌فرد، نورپردازی RGB و افکت دود عروس دریایی. هم اکنون خرید کن و فضاتو خاص کن! ارسال سریع به سراسر کشور</p>
+      <button>کد محصول : 01</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x150" alt="محصول 2">
+      <h3>محصول شماره ۲</h3>
+      <p>توضیح کوتاه درباره محصول دوم.</p>
+      <button>سفارش</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x150" alt="محصول 3">
+      <h3>محصول شماره ۳</h3>
+      <p>توضیح کوتاه درباره محصول سوم.</p>
+      <button>سفارش</button>
+    </div>
+
+  </div>
+</section>
+
+  <!-- فرم سفارش -->
+   <section id="order">
+    <h2>سفارش محصول</h2>
+    <form id="orderForm" onsubmit="sendToWhatsApp(event)">
+        <label for="name">نام شما:</label>
+        <input type="text" id="name" required>
+        <label for="product">نام محصول:</label>
+        <input type="text" id="product" required>
+        <label for="phone">شماره تماس (اختیاری):</label>
+        <input type="text" id="phone">
+        <button type="submit">ارسال به واتساپ</button>
+    </form>
+</section>
+
+
+  <!-- تماس با ما -->
+  <section id="contact" style="padding: 30px; background-color: #eee;">
+    <h2>تماس با ما</h2>
+    <p>واتساپ: 0912XXXXXXX</p>
+    <p>اینستاگرام: @mofaland</p>
+  </section>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+  }
+  </script>
+  <script>
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const product = document.getElementById("product").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    const message = `سلام، من ${name} هستم و می‌خوام محصول "${product}" رو سفارش بدم.%0Aشماره تماس: ${phone || 'ندارم'}`;
+
+    // شماره واتساپ شما:
+    const phoneNumber = "989123456789"; // ← اینو با شماره خودت جایگزین کن (مثلاً 98+912...)
+
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, '_blank');
+  }
+  </script>
+  <section id="about" class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>درباره موفا لند</h2>
+      <p>
+        موفا لند یک برند خاص برای کسانیه که دنبال کیفیت، طراحی منحصر به فرد و تجربه متفاوت هستن.
+        ما با عشق محصولات منتخب و خاص رو ارائه می‌دیم تا سبک زندگی لوکس و خوش‌سلیقه رو برای مشتری‌هامون فراهم کنیم.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1612832021196-409c0f709add?auto=format&fit=crop&w=800&q=80" alt="درباره موفا لند">
+    </div>
+  </div>
+</section>
+<section id="slider" class="slider-section">
+  <h2>گالری محصولات</h2>
+  <div class="slider-container">
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <div class="slides">
+      <img src="https://picsum.photos/id/1011/800/400" class="slide active">
+      <img src="https://picsum.photos/id/1015/800/400" class="slide">
+      <img src="https://picsum.photos/id/1016/800/400" class="slide">
+    </div>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+  </div>
+</section>
+<section id="testimonials" class="testimonials-section">
+  <h2>نظرات مشتریان ما</h2>
+  <div class="testimonials-container">
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="مشتری ۱">
+      <h3>سارا احمدی</h3>
+      <p>کیفیت محصولات موفا لند فوق‌العاده است! حتماً پیشنهاد می‌کنم.</p>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="مشتری ۲">
+      <h3>علی رضایی</h3>
+      <p>ارسال سریع و پشتیبانی عالی، تجربه‌ای بی‌نظیر!</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="مشتری ۳">
+      <h3>نگین حسینی</h3>
+      <p>محصولات با طراحی خاص و قیمت مناسب، ممنونم موفا لند!</p>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+<section id="faq" class="faq-section">
+  <h2>سوالات پرتکرار</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">چطور می‌توانم سفارش بدهم؟</button>
+    <div class="faq-answer">
+      <p>برای سفارش، کافی است محصول مورد نظر را انتخاب کرده و فرم سفارش را پر کنید یا با ما تماس بگیرید.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">ارسال محصولات چقدر طول می‌کشد؟</button>
+    <div class="faq-answer">
+      <p>ارسال محصولات معمولاً بین ۲ تا ۵ روز کاری انجام می‌شود.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">آیا تضمین بازگشت وجه وجود دارد؟</button>
+    <div class="faq-answer">
+      <p>بله، در صورت مشکل کیفیت، امکان بازگشت وجه وجود دارد.</p>
+    </div>
+  </div>
+
+</section>
+<section id="advantages" class="advantages-section">
+  <h2>چرا از موفا لند خرید کنیم؟</h2>
+  <div class="advantages-container">
+    <div class="advantage-card">
+      <div class="adv-icon">🚚</div>
+      <h3>ارسال رایگان</h3>
+      <p>ارسال سریع و رایگان به سراسر کشور</p>
+    </div>
+    <div class="advantage-card">
+      <div class="adv-icon">💯</div>
+      <h3>ضمانت کیفیت</h3>
+      <p>تضمین کیفیت محصولات و بازگشت وجه</p>
+    </div>
+    <div class="advantage-card">
+      <div class="adv-icon">📞</div>
+      <h3>پشتیبانی ۲۴/۷</h3>
+      <p>پاسخگویی سریع و مشاوره حرفه‌ای</p>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>تمامی حقوق متعلق به <strong>موفا لند</strong> است © 2025</p>
+    <div class="social-icons">
+        <a href="https://wa.me/989123456789" target="_blank" title="واتساپ">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com" target="_blank" title="اینستاگرام">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+        <a href="https://t.me/yourchannel" target="_blank" title="تلگرام">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+        </a>
+    </div>
+</footer>
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  function moveSlide(step) {
+    slideIndex += step;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    showSlide(slideIndex);
+  }
+
+  // نمایش اولیه
+  showSlide(slideIndex);
+
+  // اسلاید خودکار
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000);
+</script>
+<script>
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        // بسته شدن همه جواب‌ها
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+<script>
+  // دکمه برگشت به بالا
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
+
+</body>
+</html>
